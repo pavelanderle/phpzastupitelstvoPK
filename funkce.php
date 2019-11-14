@@ -1,8 +1,8 @@
 <?php
   function loadData($dataFile){
-    $dataRow = file($dataFile);
+    $dataRow = file($dataFile); // funce file načte obsah souboru do pole položka pole -> řádka souboru 
     foreach ($dataRow as $row) {
-      $data[] = explode(",",$row);
+      $data[] = explode(",",$row); // explode rozdělí každou řádku na položky dle znaku , výsledkem je pole
     }
     return $data;
   }
@@ -21,7 +21,7 @@
 
   function filterByParty($data,$party){
     foreach ($data as $row) {
-      if (trim($row[7])==$party){
+      if (trim($row[7])==$party){  // trim odstraní všechny bílé znaky
           $filter[] = $row;
       }
     }
